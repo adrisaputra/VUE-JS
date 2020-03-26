@@ -1,0 +1,73 @@
+<style>
+.red {
+ border: 2px solid red;
+}
+.green {
+ border: 2px solid green;
+}
+</style>
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="konten">
+			{{ pesan }}
+		</div><br>
+		<hr>
+		
+		
+		<b>Kondisi</b>
+		<div id="kondisi">
+			<div v-if="count==1">Red</div>
+			<div v-else-if="count==2">Blue</div>
+			<div v-else-if="count==3">Green</div>
+			<div v-else>Black</div>
+			
+			<div v-if="terlihat">Terlihat</div>
+		</div><br>
+		<hr>
+		
+		<b>Perulangan</b>
+		<div id="perulangan">
+		<!-- v-on bisa d ganti jadi @ -->
+			<input v-model="newdata" @keyup.enter="add"><br>
+			<button v-on:click="add"> TAMBAH </button><br>
+			<div v-for="x in data">
+				{{ x.teks | capitalize | asd}}
+			</div><br><br>
+			<div v-for="x in data2">
+				{{ x }}
+			</div>
+		</div><br>
+		<hr>
+		
+		<b>Pesan</b>
+		<div id="judul">
+			<span v-bind:title="pesan">
+				Arahkan mouse Anda kesini dan tunggu dalam beberapa detik
+				untuk melihat judul pesan yang dinamis
+			  </span>
+		</div><br>
+		<hr>
+		
+		
+		<b>Menangani Inputan Pengguna</b>
+		<div id="inputan">
+			{{ email }}
+			<!-- statis-->
+			<p v-once>{{ email }}</p>
+			<!-- dinamic text-->
+			<p v-text="email"></p>
+			<!-- dinamic text HTML-->
+			<p v-html="email"></p>
+			<br>
+			<input v-model="email" :class="[email.length < 2 ? 'red': 'green']"><br>
+			<button onclick="alert('signed_up')" v-bind:disabled="email.length < 2">SIMPAN</button>
+		</div>
+	</body>
+	<footer>
+		<script src="index.js"></script>
+	</footer>
+</html>
