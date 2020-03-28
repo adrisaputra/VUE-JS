@@ -1,0 +1,44 @@
+<!-- 
+Directive adalah atribut khusus yang diawali dengan v-. Directive berfungsi untuk menjalankan satu perintah atau ekspresi javascript di dalam atribut.
+
+Direktif ini digunakan untuk menangani event, misalnya saat sesuatu diklik, disentuh, di-scroll, dll.
+
+Direktif untuk event adalah v-on, atau bisa disingkat dengan simbol @ saja.
+-->
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="konten">
+			<button @click="Btn">BUTTON</button><br>
+			
+			<p><button v-on:click="counter += 1">Tambah 1</button></p>
+			<p>Tombol diatas telah ditekan {{ counter }} kali.</p>
+			
+		</div><br>
+	</body>
+	<script>
+	<!-- 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	-->
+		var vo = new Vue({
+			el : "#konten",
+			data : {
+				nama : 'adri',
+				counter : 0
+			},
+			methods:{
+				Btn: function(){
+					this.counter++;
+				}
+			}
+		})
+	</script>
+</html>
+
+

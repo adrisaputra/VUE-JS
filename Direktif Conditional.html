@@ -1,0 +1,52 @@
+<!-- 
+Directive adalah atribut khusus yang diawali dengan v-. Directive berfungsi untuk menjalankan satu perintah atau ekspresi javascript di dalam atribut.
+
+v-if digunakan jika hanya ada satu kondisi;
+v-else digunakan saat memiliki dua kondisi;
+v-else-if digunakan jika memiliki banyak kondisi.
+-->
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="konten">
+			<div v-if="lulus">Lulus</div><br>
+			
+			<input v-model:value="nilai">
+			<div v-if="nilai <= 50">Sangat Kurang</div>
+			<div v-else-if="nilai > 50 && nilai < 60">Kurang</div>
+			<div v-else-if="nilai >= 60 && nilai < 70">Sedang</div>
+			<div v-else-if="nilai >= 70 && nilai < 80">Cukup</div>
+			<div v-else-if="nilai >= 80 && nilai <= 100">baik</div><br>
+			
+			Jumlah : <input v-model:value="qty"><br> 
+			Harga : {{ harga }} <br> 
+			Total : {{ harga * qty }} <br> <br> 
+			<div v-if="qty <= 10">Tidak dapat Bonus</div>
+			<div v-else>Dapat Bonus</div>
+			
+		</div><br>
+		
+	</body>
+	<script>
+	<!-- 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	-->
+		var vo = new Vue({
+			el : "#konten",
+			data : {
+				lulus : true,
+				nilai : '',
+				harga : 120000,
+				qty : 1,
+			}
+		})
+	</script>
+</html>
+
+

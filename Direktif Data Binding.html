@@ -1,0 +1,62 @@
+<!-- 
+Directive adalah atribut khusus yang diawali dengan v-. Directive berfungsi untuk menjalankan satu perintah atau ekspresi javascript di dalam atribut.
+
+v-bind untuk binding data satu arah;
+v-model untuk binding data dua arah;
+v-html untuk menampilkan data HTML;
+v-text untuk menampilkan data dalam plain teks;
+v-once untuk menampilkan data satu kali (tidak di-render ulang meskipun data berubah).
+-->
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="konten">
+			<b>v-bind</b><br>
+			<input v-bind:value="nama_siswa"><br>
+			{{ nama_siswa }}
+			<br><br>
+			
+			<b>v-model</b><br>
+			<input v-model:value="nama_siswa2"><br>
+			{{ nama_siswa2 }}
+			<br><br>
+			
+			<b>v-text</b><br>
+			<textarea v-model:value="text"></textarea><br>
+			<div v-text="text"></div>
+			<br><br>
+			
+			<b>v-html</b><br>
+			<div v-html="html"></div>
+			<br><br>
+			
+			<b>v-once</b><br>
+			<div v-once>{{ text }}</div>
+			<br><br>
+			
+		</div><br>
+		
+	</body>
+	<script>
+	<!-- 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	-->
+		var vo = new Vue({
+			el : "#konten",
+			data : {
+				nama_siswa : "adri",
+				nama_siswa2 : "saputra",
+				text : "ini text",
+				html : "<b>aaaa</b>"
+			}
+		})
+	</script>
+</html>
+
+

@@ -1,0 +1,29 @@
+
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="konten">
+			{{ pesan }}
+		</div><br>
+		
+	</body>
+	<script>
+	<!-- 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	-->
+		new Vue({
+			el : "#konten",
+			data : {
+				pesan : "Vue Instance dan property"
+			}
+		})
+	</script>
+</html>
+
+

@@ -1,0 +1,40 @@
+<!-- Data binding di Vue adalah cara vue untuk menyambungkan data yang ada di kode Javascript dengan HTML. 
+
+Data binding 1 Arah menggunakan v-bind
+Data binding 2 Arah menggunakan v-model
+-->
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="konten">
+			<b>Data binding 1 Arah</b><br>
+			<input v-bind:value="nama_siswa"><br>
+			{{ nama_siswa }}
+			<br><br>
+			<b>Data binding 2 Arah</b><br>
+			<input v-model:value="nama_siswa2"><br>
+			{{ nama_siswa2 }}
+		</div><br>
+		
+	</body>
+	<script>
+	<!-- 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	-->
+		var vo = new Vue({
+			el : "#konten",
+			data : {
+				nama_siswa : "Adri Saputra",
+				nama_siswa2 : "Adri Saputra"
+			}
+		})
+	</script>
+</html>
+
+
