@@ -1,0 +1,44 @@
+<!-- Dalam Computed Service nilai yang berubah dalam sebuah variable akan merubah variabel (Ketergantungan pada variable awal)
+-->
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="konten">
+			{{ biodata }}
+		</div>
+	</body>
+	<script>
+	<!-- 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	-->
+	var vo = new Vue({
+		el : '#konten',
+		data : {
+			nama : 'Adri',
+			umur : 30
+		},
+		computed : {
+			biodata : {
+				// Untuk menampilkan data
+				get:function(){
+					return this.nama +" umurnya "+this.umur
+				},
+				<!-- Untuk mengubah data -->
+				<!-- param = nilai yang akan di ubah (nama atau umur); -->
+				set:function(param){
+					var data = param.split(' ');
+					this.nama = data[0];
+					this.umur = data[1];
+				}
+			}
+		}
+	})
+	</script>
+</html>
+
+

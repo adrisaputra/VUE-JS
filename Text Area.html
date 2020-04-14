@@ -1,0 +1,29 @@
+<!-- Dalam Computed Service nilai yang berubah dalam sebuah variable akan merubah variabel (Ketergantungan pada variable awal)
+-->
+<html>
+	<head>
+		<title>VUE</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="konten">
+			<textarea v-model="pesan" placeholder="Masukkan Pesan..."> </textarea><br>
+			{{ pesan }} 
+		</div>
+	</body>
+	<script>
+	 
+	// Atribut el berfungsi untuk memilih elemen, pada contoh di atas kita akan memilih elemen dengan id='konten' 
+	// data berfungsi untuk menyimpan variabel yang berisi data.
+	// pesan berisi dana yang akan di tampilkan {{ pesan }}.
+	 var vue = new Vue({
+		 el : '#konten',
+		 data : {
+			 pesan : ''
+		 }
+	 })
+	
+	</script>
+</html>
+
+
